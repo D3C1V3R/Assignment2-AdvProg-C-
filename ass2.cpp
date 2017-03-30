@@ -78,7 +78,7 @@ void ReadFile()
 
 void DisplayRecords()
 {// Displays records one at a time
-	for (int i = 0; i < gNumRecs; i++) {
+	for (int i = 0; i < gNumRecs/5; i++) {
 		for (int j = 0; j <= 4; j++) {
 			DisplayRecord(i+j);
 		}
@@ -94,17 +94,40 @@ void DisplayRecords()
 void AddRecord()
 {// Adds a new record to the database array
 
-	cout<<"AddRecord()- Not yet implemented\n";
+	cout << "Adding a new Record to Database... ";
 
-	// if DB not full
-	//      create new PhoneRecord 
+	if (gNumRecs < cMaxRecs) {
+		gRecs[gNumRecs + 1] = new PhoneRecord;
+		while (1) {
+			cin >> gRecs[gNumRecs + 1]->PhoneNo;
+
+		}
+
+	}
+	else {
+		cout << "Error: DB Full!";
+	}
+
+
+
+
+
+	//	char PhoneNo[cMaxPChars + 1];
+	//	char FamilyName[cMaxNChars + 1];
+	//	char GivenName[cMaxNChars + 1];
+	//	int StreetNo;
+	//	char StreetName[cMaxLChars + 1];
+	//	char Suburb[cMaxLChars + 1];
+	//	int PostCode;
+	//const int cMaxNChars = 20; // Max chars in name
+	//const int cMaxLChars = 30; // Max chars in location
+	//const int cMaxPChars = 8;  // Max chars in phone no
+
 	//      get data from user and assign to new record's fields
 	//      add new record to array
 	//      increment gNumRecs
 	//      append new record to the DB file
 	//      print "record added to DB" message
-	// else
-	//      print "Error: DB Full!" message
 }
 
 void SearchRecords()
@@ -134,10 +157,13 @@ void CleanUp()
 
 void DisplayRecord(int i)
 {// Displays record i on screen
-	cout << gRecs[i]->PhoneNo << "\t" << gRecs[i]->GivenName << "Welp";
-	// also display PhoneType
-	// etc
-	// etc
-	// etc
+	cout << gRecs[i]->PhoneNo << "\t";
+	cout << gRecs[i]->GivenName << " ";
+	cout << gRecs[i]->FamilyName << ", ";
+	cout << gRecs[i]->StreetNo << " ";
+	cout << gRecs[i]->StreetName << ", ";
+	cout << gRecs[i]->Suburb << ", ";
+	cout << gRecs[i]->PostCode;
 	cout << endl;
 }
+
