@@ -229,11 +229,10 @@ void SearchRecords()
 	for (int i = 0; i <= gNumRecs; i++) {
 		if (atoi(gRecs[i]->PhoneNo) == index) {
 			DisplayRecord(i);
-			goto Escape;
+			return;
 		}
 	}
 	cout << "Record not found!" << endl;
-	Escape:; 
 }
 
 
