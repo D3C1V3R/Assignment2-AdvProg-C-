@@ -11,6 +11,7 @@ void ReadFile();
 void DisplayRecords();
 void AddRecord();
 void SearchRecords();
+void SaveFile(int index);
 void CleanUp();
 
 #endif

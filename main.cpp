@@ -20,8 +20,8 @@ int main()
 	cout << "Redirect input? (y/n): ";
 	cin.getline(RedirectInput,20);
 	if(RedirectInput[0]=='y'){ // then get input from input.txt...
-		FILE *fp = freopen ("input.txt","r",stdin);    
-		if(fp==NULL){cerr<<"\"input.txt\" not found!\n"; exit(1);}
+		//FILE *fp = freopen ("input.txt","r",stdin);    
+		//if(fp==NULL){cerr<<"\"input.txt\" not found!\n"; exit(1);}
 	}
 
 	bool Quit = false;
